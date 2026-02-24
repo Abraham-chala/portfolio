@@ -1,87 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Abraham Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for modern look -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abraham Chala | Elite Developer</title>
+
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
 
-<!-- NAVIGATION BAR -->
+<!-- SCROLL PROGRESS BAR -->
+<div class="progress-container"><div class="progress-bar" id="progress-bar"></div></div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor"></div>
+
+<!-- NAVBAR -->
 <nav>
-    <h2 class="logo">Abraham</h2>
+    <div class="logo">Abraham</div>
     <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="#skills"><i class="fas fa-laptop-code"></i> Skills</a></li>
+        <li><a href="#projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
 </nav>
 
-<!-- HERO / HOME SECTION -->
-<section id="home" class="section hero-section">
-    <img src="images/myphoto.jpg" alt="Abraham Photo" class="profile-photo">
-    <h1>Hello, I'm Abraham</h1>
-    <p class="role">Full Stack Developer | Ethical Hacker | Robotics Engineer</p>
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <!-- HERO IMAGE -->
+        <div class="hero-image">
+            <img src="images/abraham.jpg" alt="Abraham Chala Photo">
+        </div>
 
-    <!-- Social links -->
-    <div class="social-links">
-    <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-    <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-</div>
+        <!-- HERO TEXT -->
+        <div class="hero-text">
+            <h3 class="intro">Hello, I am</h3>
+            <h1 class="glitch">Abraham Chala</h1>
+            <h2 class="profession"><span class="typing"></span></h2> <!-- Only professions typed here -->
+            <p>
+               I design and build secure, scalable, and intelligent digital solutions that solve real-world problems.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/Abraham-chala" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </div>
 </section>
 
 <!-- ABOUT SECTION -->
 <section id="about" class="section">
     <h2>About Me</h2>
     <p>
-        I am a Full Stack Developer and Ethical Hacker. I build web applications, secure systems, robotics,
-        and automation projects. I love solving real-world problems using technology.
+      I am a technology enthusiast dedicated to creating secure, scalable, and intelligent systems that solve real-world challenges. My expertise spans full stack development, cybersecurity, and robotics, allowing me to design solutions that are both technically robust and highly efficient. I specialize in building applications, automation workflows, and intelligent systems that enhance performance, streamline processes, and improve user experiences. Beyond coding, I focus on thoughtful design, problem-solving, and innovation, ensuring that every project I undertake delivers measurable impact. By combining creativity with technical precision, I aim to develop solutions that are not only functional and reliable but also adaptable, forward-thinking, and capable of shaping the future of technology.
     </p>
 </section>
 
 <!-- SKILLS SECTION -->
-<section id="skills" class="section fade-in">
-    <h2>My Skills</h2>
-    <div class="skills-container">
-      <span class="skill"><i class="fab fa-html5"></i> HTML</span>
-      <span class="skill"><i class="fab fa-css3-alt"></i> CSS</span>
-<span class="skill"><i class="fab fa-js"></i> JavaScript</span>
-<span class="skill"><i class="fab fa-python"></i> Python</span>
-<span class="skill"><i class="fab fa-node-js"></i> Node.js</span>
-<span class="skill"><i class="fab fa-react"></i> React</span>
-<span class="skill"><i class="fab fa-php"></i> PHP</span>
-<span class="skill"><i class="fas fa-user-shield"></i> Ethical Hacking</span>
+<section id="skills" class="section">
+    <h2>Tech Stack</h2>
+    <div class="skills-grid">
+        <div class="glass skill" data-skill="90%">HTML</div>
+        <div class="glass skill" data-skill="85%">CSS</div>
+        <div class="glass skill" data-skill="80%">JavaScript</div>
+        <div class="glass skill" data-skill="75%">React</div>
+        <div class="glass skill" data-skill="70%">Node.js</div>
+        <div class="glass skill" data-skill="65%">Python</div>
+        <div class="glass skill" data-skill="60%">Cybersecurity</div>
     </div>
 </section>
+
 <!-- PROJECTS SECTION -->
-<!-- PROJECTS SECTION -->
-<section id="projects" class="section fade-in">
+<section id="projects" class="section">
     <h2>Projects</h2>
-    <div class="project fade-in">
-        <h3>Autonomous Robot</h3>
-        <p>Robot with SLAM navigation system.</p>
-    </div>
-    <div class="project fade-in">
-        <h3>Smart Irrigation System</h3>
-        <p>System that waters plants automatically.</p>
-    </div>
-    <div class="project fade-in">
-        <h3>Ethical Hacking Demo</h3>
-        <p>Simulated penetration testing and security analysis project.</p>
+    <div class="project-grid">
+        <div class="card project-card">
+            <video class="project-video" src="videos/robot.mp4" muted loop></video>
+            <div class="project-info">
+                <h3>Autonomous Robot</h3>
+                <p>AI-based SLAM navigation system.</p>
+            </div>
+        </div>
+        <div class="card project-card">
+            <video class="project-video" src="videos/irrigation.mp4" muted loop></video>
+            <div class="project-info">
+                <h3>Smart Irrigation</h3>
+                <p>IoT intelligent automation platform.</p>
+            </div>
+        </div>
+        <div class="card project-card">
+            <video class="project-video" src="videos/hacking.mp4" muted loop></video>
+            <div class="project-info">
+                <h3>Ethical Hacking Lab</h3>
+                <p>Security testing & vulnerability analysis.</p>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- CONTACT SECTION -->
 <section id="contact" class="section">
-    <h2>Contact Me</h2>
+    <h2>Contact</h2>
     <p>Email: your@email.com</p>
 </section>
+
+<footer>© 2026 Abraham — Elite Developer</footer>
 
 <script src="script.js"></script>
 </body>
