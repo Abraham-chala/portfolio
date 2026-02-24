@@ -1,34 +1,74 @@
-// Smooth scrolling for nav links
-document.querySelectorAll("nav ul li a").forEach(link => {
-    link.addEventListener("click", function(e){
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        target.scrollIntoView({behavior:"smooth"});
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+    // ------------------------
+    // Custom Cursor
+    // ------------------------
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', e => {
+        if(cursor) {
+            cursor.style.top = e.clientY + 'px';
+            cursor.style.left = e.clientX + 'px';
+        }
+    });
+
+    // ------------------------
+    // Scroll Progress Bar
+    // ------------------------
+    const progress = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        if(progress) progress.style.width = scrollPercent + '%';
+    });
+
+    // ------------------------
+    // Typing Effect
+    // ------------------------
+    const typingElement = document.querySelector('.typing');
+    if(typingElement){
+        const professions = ["Full Stack Developer", "Ethical Hacker", "Robotics Engineer"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentWord = professions[wordIndex];
+
+            if(!isDeleting){
+                typingElement.textContent = currentWord.slice(0, charIndex + 1);
+                charIndex++;
+
+                if(charIndex === currentWord.length){
+                    isDeleting = true;
+                    setTimeout(type, 1500); // wait before deleting
+                    return;
+                }
+            } else {
+                typingElement.textContent = currentWord.slice(0, charIndex - 1);
+                charIndex--;
+
+                if(charIndex === 0){
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % professions.length;
+                }
+            }
+
+            setTimeout(type, isDeleting ? 50 : 100); // faster deleting
+        }
+
+        type();
+    }
+
+    // ------------------------
+    // Optional: Project Card Video Hover (if you have videos)
+    // ------------------------
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        const video = card.querySelector('.project-video');
+        if(video){
+            card.addEventListener('mouseenter', () => { video.play(); });
+            card.addEventListener('mouseleave', () => { video.pause(); video.currentTime = 0; });
+        }
     });
 });
-
-// Scroll animations
-// Scroll animations
-function revealOnScroll(){
-    const faders = document.querySelectorAll('.fade-in');
-    const skills = document.querySelectorAll('.skill');
-
-    faders.forEach(fader => {
-        const top = fader.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if(top < windowHeight - 100){
-            fader.classList.add('show');
-        }
-    });
-
-    skills.forEach(skill => {
-        const top = skill.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if(top < windowHeight - 100){
-            skill.classList.add('show');
-        }
-    });
-}
-
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
